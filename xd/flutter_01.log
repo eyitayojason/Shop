@@ -1,0 +1,61 @@
+Flutter crash report; please file at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter run --machine --target lib\main.dart -d 8T89626AA1980801468 --track-widget-creation --start-paused
+
+## exception
+
+SocketException: SocketException: Read failed (OS Error: Not enough memory resources are available to process this command.
+, errno = 8), port = 0
+
+```
+#0      _NativeSocket.read (dart:io-patch/socket_patch.dart:845:33)
+#1      _RawSocket.read (dart:io-patch/socket_patch.dart:1585:22)
+#2      _Socket._onData (dart:io-patch/socket_patch.dart:1981:27)
+#3      _rootRunUnary (dart:async/zone.dart:1196:13)
+#4      _CustomZone.runUnary (dart:async/zone.dart:1085:19)
+#5      _CustomZone.runUnaryGuarded (dart:async/zone.dart:987:7)
+#6      _BufferingStreamSubscription._sendData (dart:async/stream_impl.dart:339:11)
+#7      _BufferingStreamSubscription._add (dart:async/stream_impl.dart:266:7)
+#8      _SyncStreamControllerDispatch._sendData (dart:async/stream_controller.dart:779:19)
+#9      _StreamController._add (dart:async/stream_controller.dart:655:7)
+#10     _StreamController.add (dart:async/stream_controller.dart:597:5)
+#11     new _RawSocket.<anonymous closure> (dart:io-patch/socket_patch.dart:1527:33)
+#12     _NativeSocket.issueReadEvent.issue (dart:io-patch/socket_patch.dart:1019:14)
+#13     _microtaskLoop (dart:async/schedule_microtask.dart:43:21)
+#14     _startMicrotaskLoop (dart:async/schedule_microtask.dart:52:5)
+#15     _runPendingImmediateCallback (dart:isolate-patch/isolate_patch.dart:118:13)
+#16     _RawReceivePortImpl._handleMessage (dart:isolate-patch/isolate_patch.dart:169:5)
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel stable, v1.17.1, on Microsoft Windows [Version 10.0.18363.778], locale en-NG)
+    • Flutter version 1.17.1 at C:\src\flutter
+    • Framework revision f7a6a7906b (7 days ago), 2020-05-12 18:39:00 -0700
+    • Engine revision 6bc433c6b6
+    • Dart version 2.8.2
+
+[!] Android toolchain - develop for Android devices (Android SDK version 29.0.2)
+    • Android SDK at C:\Users\Jason\AppData\Local\Android\sdk
+    • Platform android-29, build-tools 29.0.2
+    • Java binary at: C:\Program Files\Android\Android Studio\jre\bin\java
+    ✗ Could not determine java version
+
+[✓] Android Studio (version 3.5)
+    • Android Studio at C:\Program Files\Android\Android Studio
+    • Flutter plugin version 43.0.1
+    • Dart plugin version 191.8593
+    • Java version OpenJDK Runtime Environment (build 1.8.0_202-release-1483-b03)
+
+[✓] VS Code (version 1.43.2)
+    • VS Code at C:\Users\Jason\AppData\Local\Programs\Microsoft VS Code
+    • Flutter extension version 3.9.1
+
+[✓] Connected device (1 available)
+    • Nokia 3 2 • 8T89626AA1980801468 • android-arm64 • Android 10 (API 29)
+
+! Doctor found issues in 1 category.
+```
